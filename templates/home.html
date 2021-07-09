@@ -1,0 +1,158 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>HomePage</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{%static 'store/css/main.css'%}">
+
+    
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark top-nav ">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="home.html">MOMSHOP</a>
+            <!--this is to set the collapsing button if the size of page is similar to mobile size
+            or below than computer screen size, main classes are navbar-toggle and collapsed
+            data-toggle setting tell js that this handle collaps and target id is set for the list
+            of navigationbarlist members telling which members will be in that collapse-->
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navigationlist" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="fas fa-bars"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navigationlist">
+                <ul class= "navbar-nav mr-auto">
+                    <li class=" nav-item">
+                       <a class="nav-link" href=''>Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href='store'><span class="fas fa-palette"></span>ArtShop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href='#'>Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">AboutMe</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">More</a>
+                    </li>
+                   
+                </ul>
+
+                <div class="form-inline my-2 my-lg-0" >
+                    <a href="#"class="btn btn-warning"><span class="fas fa-user"></span> Sign in</a>
+                    
+                    <a href="#" class="btn" id="cart-button">
+                        <span class="fas fa-dolly-flatbed fa-lg" > <p id="cart-total"> 0</p></span>
+                   </a>
+                  
+       
+               </div>
+            </div>
+        </div>
+        
+    </nav>
+    <!--Slideshow-->
+    <style>
+       
+        
+
+       .carousel-item{
+    height:32rem;
+    background:#777;
+    color:white;
+    position:relative;
+   
+}
+
+.float-container{
+    position:absolute;
+    padding:20px;
+    height:100%;
+    width:100%;
+    
+}
+
+.float-child{
+    width:50%;
+    height:100%;
+    float:left;
+    padding:20px;
+}
+
+#momlatest{
+    width: 100%;
+    height: 100%;
+    border:10px groove goldenrod;
+}
+
+#slide-1-writing{
+  padding:90px;
+}
+.overlay-image{
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    top:0;
+}
+        
+       
+    </style>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1" ></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="overlay-image" style="background-image: url(static/store/images/Brush-background-.jpg); opacity: 0.5;">
+                </div>
+                <div class="float-container">
+                    <div class="float-child">
+                        <div id="slide-1-writing">
+                            <p><h1>Latest Painting</h1></p>
+                            <p><em>"Deserve to be added in a pile of artworks."</em><br> Artist <b>SMITA SHAH</b></p>
+                            <a href="#" class="btn btn-primary btn-lg">
+                                More Details
+                            </a>
+                        </div>
+                    </div>
+                    <div class="float-child" id="slide-1-painting"> 
+                        <img id="momlatest" src="/static/store/images/painting-latest.jpg" alt="New painting">
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="container">
+                    <p>Best Artist paintings</p>
+                    <p>Latest paintings</p>
+                    <a href="#" class="btn btn-primary btn-lg">
+                        More Details
+                    </a>
+                </div>
+            </div>
+        </div>
+        <a href="#myCarousel" class="carousel-control-prev" role="button"
+        data-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span></a>
+        <a href="#myCarousel" class="carousel-control-next" role="button"
+        data-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span></a>
+    </div>
+    
+    <h1>homepage </h1>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    
+</body>
+</html>

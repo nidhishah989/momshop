@@ -1,0 +1,43 @@
+body{
+    background-color:white;
+}
+
+
+
+#cart-button{
+    padding-top: 1rem;
+    color:lightskyblue;
+}
+
+#cart-total{
+	display: inline-block;
+	text-align:center;
+	color:#fff;
+	background-color: red;
+	width: 20px;
+
+	border-radius: 20%;
+	
+	font-size: 14px;
+}
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+    margin-bottom: 4rem;
+  }
+  /* Since positioning the image, we need to help out the caption */
+  .carousel-caption {
+    bottom: 3rem;
+    z-index: 10;
+  }
+  
+  /* Declare heights because of positioning of img element */
+ 
+
+  .carousel-control-prev,.carousel-control-next {
+    margin:-15px;
+    z-index: 0;
+  }
