@@ -1,0 +1,26 @@
+{% load static %}
+<article class="artwork">
+    
+    <aside class="actions">
+        <a class="btn btn-default" href="{% url 'artwork_edit' art.id %}">
+            {% static 'store/icons/pencil-fill.svg' %}
+        </a>
+    </aside>
+    <h2>Artwork name: {{art.artname}}</h2>
+    <h4>Description: {{art.description}}</h4>
+    <h4>{{art.painting_photo}}</h4>
+    
+    <h4>Availabel? : {{art.available}}</h4>
+    <h4>Painting Type: {{art.paintingType}}</h4>
+    <h4>painting Category: {{art.paintingCategory}}</h4>
+    <h4>PRICE : {{art.priceUSA}}$</h4>
+    <h4> painting Publish date: {{art.created_date}}</h4>
+    <h4> Tags: </h4>
+        {% for t in art.tags %}
+        <h4>tag: {{t}}</h4>
+        {% endfor %}
+    <h4> PAinting Size:</h4>
+        {%for s,v in art.artsizeInch.items %}  
+        <h4>{{s}} : {{v}}</h4>   
+        {% endfor %}
+</article>

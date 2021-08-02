@@ -10,14 +10,97 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{%static 'store/css/main.css'%}">
+    <style>
+    .carousel-item{
+    height:32rem;
+    background:#777;
+    color:white;
+    position:relative;
+   
+    }
 
+    .float-container{
+    position:absolute;
+    padding:20px;
+    height:100%;
+    width:100%;
+    
+    }
+
+    .float-child{
+    width:50%;
+    height:100%;
+    float:left;
+    padding:20px;
+    
+    }
+    .frame {
+    background-color:#ddc;
+    border:solid 2vmin rgba(8, 5, 5, 0.822);
+    border-bottom-color:rgba(0, 0, 0, 0.836);
+    border-left-color:rgba(0, 0, 0, 0.836);
+    border-radius:2px;
+    border-right-color:rgba(0, 0, 0, 0.836);
+    border-top-color:rgba(0, 0, 0, 0.836);
+    box-shadow:0 0 5px 0 rgba(0,0,0,.25) inset, 0 5px 10px 5px rgba(0,0,0,.25);
+    box-sizing:border-box;
+    display:inline-block;
+    padding:2vmin;
+    position:absolute;
+    text-align:center;
+    height: 400px;
+    width: 400px;
+    
+  }
+    #momlatest{
+        border:solid 2px;
+        border-bottom-color:#ffe;
+        border-left-color:#eed;
+        border-right-color:#eed;
+        border-top-color:#ccb;
+        height: 100%;
+        width: 100%;
+        
+    }
+
+    #slide-1-writing,#slide-2-writing{
+     padding:90px;
+     color:gainsboro;
+     font-style: oblique;
+    
+    }
+    .overlay-image,.overlay-image-2{
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    top:0;
+    
+    }
+    
+    .img-thumbnail{
+    border: 5px solid rgba(0, 0, 0, 0.74);
+    padding:0.25rem;
+  }
+   
+  .img-cat{
+      border: 15px solid transparent;
+      border-image: url(static/store/images/border.png) 30;
+      padding: 0.40rem;
+      background-color: whitesmoke;
+  }
+  #cat-type{
+   color:darkslategrey;
+ }
+ 
+    </style>
     
 
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark top-nav ">
         <div class="container-fluid">
-            <a class="navbar-brand" href="home.html">MOMSHOP</a>
+            <a class="navbar-brand" href=''>MOMSHOP</a>
             <!--this is to set the collapsing button if the size of page is similar to mobile size
             or below than computer screen size, main classes are navbar-toggle and collapsed
             data-toggle setting tell js that this handle collaps and target id is set for the list
@@ -60,52 +143,6 @@
         
     </nav>
     <!--Slideshow-->
-    <style>
-       
-        
-
-       .carousel-item{
-    height:32rem;
-    background:#777;
-    color:white;
-    position:relative;
-   
-}
-
-.float-container{
-    position:absolute;
-    padding:20px;
-    height:100%;
-    width:100%;
-    
-}
-
-.float-child{
-    width:50%;
-    height:100%;
-    float:left;
-    padding:20px;
-}
-
-#momlatest{
-    width: 100%;
-    height: 100%;
-    border:10px groove goldenrod;
-}
-
-#slide-1-writing{
-  padding:90px;
-}
-.overlay-image{
-    position:absolute;
-    bottom:0;
-    left:0;
-    right:0;
-    top:0;
-}
-        
-       
-    </style>
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -115,8 +152,8 @@
             <div class="carousel-item active">
                 <div class="overlay-image" style="background-image: url(static/store/images/Brush-background-.jpg); opacity: 0.5;">
                 </div>
-                <div class="float-container">
-                    <div class="float-child">
+                <div class="float-container row">
+                    <div class="float-child col-md-6 col-xs-12">
                         <div id="slide-1-writing">
                             <p><h1>Latest Painting</h1></p>
                             <p><em>"Deserve to be added in a pile of artworks."</em><br> Artist <b>SMITA SHAH</b></p>
@@ -125,18 +162,24 @@
                             </a>
                         </div>
                     </div>
-                    <div class="float-child" id="slide-1-painting"> 
-                        <img id="momlatest" src="/static/store/images/painting-latest.jpg" alt="New painting">
+                    <div class="float-child col-md-6 col-xs-12" id="slide-1-painting"> 
+                        <div class="frame">
+                            <img id="momlatest" src="/static/store/images/painting-latest.jpg" alt="New painting">
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="carousel-item">
-                <div class="container">
-                    <p>Best Artist paintings</p>
-                    <p>Latest paintings</p>
-                    <a href="#" class="btn btn-primary btn-lg">
-                        More Details
-                    </a>
+                <div class="float-container">
+                    <div class="overlay-image" style="background-image: url(static/store/images/Blogpage.jpg); opacity: 0.5;">
+                    </div>
+                    <div class="flaot-child">
+                        <div id="slide-2-writing">
+                            <p><h1>Art Collection</h1></p>
+                            <p><em>"Seeing my artwork on a wall of your sweet home would be an honor for me."</em><br> Artist <b>SMITA SHAH</b></p>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -146,8 +189,152 @@
         data-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span></a>
     </div>
     
-    <h1>homepage </h1>
+    <section>
+        <div class="container">
+        
+                <h1 class="heading" style="text-align: center;"> Trending Artwork</h1>
+                <div style="border: 1px solid lightgray; margin-left:40%; margin-right:40%;"> </div>
+                <br>
+                <div class="nav-center" style="text-align: center;">
+                    <ul class="nav nav-pills" style="display:flex; justify-content: center; ">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#latest-show" data-toggle="pill">Latest</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#fetured-show" data-toggle="pill">Featured</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="latest-show">
+                           <div class="card-deck">
+                               <div class="card">
+                                    <img class="card-img-top img-thumbnail" src="/static/store/images/painting-latest.jpg" alt="Card image" style="width:100%">
+                                    <div class="card-body" style="text-align: left;">
+                                        <h4 class="card-title">Butterfly</h4>
+                                        <h6>$20.00</h6>
+                                        <a href="#" class="btn btn-info"><span class="fas fa-dolly-flatbed"></span></a>
+                                        <a href="#" class="btn btn-info"><span class="fas fa-eye"></span></a>
+                                        <a href="#" class="btn btn-outline-success">Wishlist <span class="fas fa-heart"></span></a>
+                                    </div>
+                                </div>
+                               <div class="card">
+                                    <img class="card-img-top img-thumbnail" src="/static/store/images/painting-latest.jpg" alt="Card image" style="width:100%">
+                                    <div class="card-body" style="text-align: left;">
+                                        <h4 class="card-title">Butterfly</h4>
+                                        <h6>$20.00</h6>
+                                        <a href="#" class="btn btn-info"><span class="fas fa-dolly-flatbed"></span></a>
+                                        <a href="#" class="btn btn-info"><span class="fas fa-eye"></span></a>
+                                        <a href="#" class="btn btn-outline-success">Wishlist <span class="fas fa-heart"></span></a>
+                                    </div>
+                                </div>
+                               <div class="card">
+                                    <img class="card-img-top img-thumbnail" src="/static/store/images/painting-latest.jpg" alt="Card image" style="width:100%">
+                                    <div class="card-body" style="text-align: left;">
+                                        <h4 class="card-title">Butterfly</h4>
+                                        <h6>$20.00</h6>
+                                        <a href="#" class="btn btn-info"><span class="fas fa-dolly-flatbed"></span></a>
+                                        <a href="#" class="btn btn-info"><span class="fas fa-eye"></span></a>
+                                        <a href="#" class="btn btn-outline-success">Wishlist <span class="fas fa-heart"></span></a>
+                                    </div>
+                                </div>
+                           </div>
+                        </div>
+                        <div class="tab-pane fade" id="fetured-show">
+                            <div class="card-deck">
+                                <div class="card">
+                                     <img class="card-img-top img-thumbnail" src="/static/store/images/featuredart-1.jpg" alt="Card image" style="width:100%">
+                                     <div class="card-body" style="text-align: left;">
+                                         <h4 class="card-title">Butterfly</h4>
+                                         <h6>$20.00</h6>
+                                         <a href="#" class="btn btn-info"><span class="fas fa-dolly-flatbed"></span></a>
+                                         <a href="#" class="btn btn-info"><span class="fas fa-eye"></span></a>
+                                         <a href="#" class="btn btn-outline-success">Wishlist <span class="fas fa-heart"></span></a>
+                                     </div>
+                                 </div>
+                                <div class="card">
+                                     <img class="card-img-top img-thumbnail" src="/static/store/images/featuredart-1.jpg" alt="Card image" style="width:100%">
+                                     <div class="card-body" style="text-align: left;">
+                                         <h4 class="card-title">Butterfly</h4>
+                                         <h6>$20.00</h6>
+                                         <a href="#" class="btn btn-info"><span class="fas fa-dolly-flatbed"></span></a>
+                                         <a href="#" class="btn btn-info"><span class="fas fa-eye"></span></a>
+                                         <a href="#" class="btn btn-outline-success">Wishlist <span class="fas fa-heart"></span></a>
+                                     </div>
+                                 </div>
+                                <div class="card">
+                                     <img class="card-img-top img-thumbnail" src="/static/store/images/featuredart-1.jpg" alt="Card image" style="width:100%">
+                                     <div class="card-body" style="text-align: left;">
+                                         <h4 class="card-title">Butterfly</h4>
+                                         <h6>$20.00</h6>
+                                         <a href="#" class="btn btn-info"><span class="fas fa-dolly-flatbed"></span></a>
+                                         <a href="#" class="btn btn-info"><span class="fas fa-eye"></span></a>
+                                         <a href="#" class="btn btn-outline-success">Wishlist <span class="fas fa-heart"></span></a>
+                                     </div>
+                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+        </div>
+    </section>
+    <br>
+    <br>
+    <br>
+    <section>
+        <div class="container-fluid row" style="background-image: url(static/store/images/interior.jpg); background-size:cover; background-position: 50% 50%; display:inline-flex; flex:auto; margin:0; padding:0;">
+            
+                <div class="container col-md-4 col-xs-12" id="cat-title">
+                    <div  class= "container" style=" margin-left: 15%; margin-top:20%; color:gainsboro">
+                    <h1> Categorized Paintings</h1>
+                    <p><i>"Discover World with my artworks"</i></p>
+                   </div>
+                    
+                </div>
+                <div class="container col-md-8 col-xs-12"> 
+                   <div class="row h-100" style="margin-top:15px;">
+                       <div class="col-md-4 col-xs-12 align-self-center">
+                                <div class="card" style="background-color: transparent; border: none;">
+                                   <img class="card-img-top img-cat" src="/static/store/images/painting-latest.jpg" alt="Card image" style="width:100%">
+                                        <div class="card-title">
+                                        <h4 id="cat-type">LandScape</h4>
+                                    </div>
+                                </div>
+                       </div>
+                       <div class="col-md-4 col-xs-12" >
+                        <div class="card" style="background-color: transparent; border:none;">
+                            <img class="card-img-top img-cat" src="/static/store/images/painting-latest.jpg" alt="Card image" style="width:100%">
+                            <div class="card-title">
+                                <h4 id="cat-type">LandScape</h4>
+                            </div>
+                        </div>
+                        <div class="card" style="background-color: transparent; border:none;">
+                            <img class="card-img-top img-cat" src="/static/store/images/painting-latest.jpg" alt="Card image" style="width:100%">
+                            <div class="card-title">
+                                <h4 id="cat-type">LandScape</h4>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="col-md-4 col-xs-12 align-self-center" >
+                            <div class="card" style="background-color: transparent; border:none;">
+                                <img class="card-img-top img-cat" src="/static/store/images/painting-latest.jpg" alt="Card image" style="width:100%">
+                                <div class="card-title">
+                                    <h4 id="cat-type">LandScape</h4>
+                                </div>
+                            </div>
+                        </div>
+                  
+                   </div> 
+                   
+                </div>
+           
+           
+        </div>
+    </section>
 
+    <footer>
+        <h1> This is the footer</h1>
+    </footer>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

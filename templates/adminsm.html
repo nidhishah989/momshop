@@ -1,0 +1,8 @@
+<h1>this is admin page</h1>
+
+{% for artwork in artworks %}
+<h2><a href="{% url 'artwork_detail' artwork.id %}">{{ artwork.artname }}</a></h2>
+<h2>Artwork name: {{artwork.artname}}</h2>
+<h4>Description: {{artwork.description}}</h4>
+<h4>Availabel? : {{artwork.available}}</h4>
+{% endfor %}
